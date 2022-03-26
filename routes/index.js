@@ -1,26 +1,12 @@
 module.exports = (app) => {
-    app.get('/', (req, res) => {
-        res.render('index.ejs')
-    })
-
-    app.post('/', (req, res) => {
+    app.get('/', async(req, res) => {
         var conexao = require('../config/database')
         conexao()
 
-        var modelo = require('../models/mensagem')
+        var modelo = require('../models/metas')
+        var documentos = await modelo.find()
 
-        var documento = new modelo({
-                nome: req.body.first_name,
-                sobrenome: req.body.last_name,
-                email: req.body.email,
-                mensagem: req.body.message
-            })
-            .save()
-            .then(() => {
-                res.redirect('/')
-            })
-            .catch(() => {
-                res.send("Não foi possível gravar o documento no Banco de Dados")
-            })
+        res.render('index.ejs',{resultado:documentos})
     })
+
 }

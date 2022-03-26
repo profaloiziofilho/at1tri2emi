@@ -290,7 +290,7 @@ body .full-width {
 }
 
 .footer a {
-    color: #0A1128;
+    color: #009edb;
 }
 
 .heart {
@@ -313,7 +313,7 @@ body .full-width {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    color: #009edb;
+    color: #0A1128;
     transform: rotate(-90deg);
-    border: 0.1rem solid #009edb;
+    border: 0.1rem solid #0A1128;
 }
