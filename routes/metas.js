@@ -17,7 +17,7 @@ module.exports = (app) => {
                 res.redirect('/metas')
             })
             .catch(() => {
-                res.send("Não foi possível gravar o documento no Banco de Dados")
+                res.send("Não é possível gravar o documento no Banco de Dados. Alguns alunos postaram termos chulos e inadequados para o ambiente escolar")
             })
     })
 
